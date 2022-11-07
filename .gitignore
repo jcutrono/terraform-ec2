@@ -7,6 +7,13 @@ project.lock.json
 *.pyc
 *.exe
 
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
 # Visual Studio Code
 .vscode
 

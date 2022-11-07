@@ -11,7 +11,7 @@ resource "aws_instance" "example" {
   ami             = var.ami
   instance_type   = var.instance_type
   key_name        = aws_key_pair.key_pair_app.key_name
-  security_groups = ["a group with ssh and http"]
+  security_groups = ["scoutcard"]
   tags = {
     Name = var.vmname
   }
@@ -28,7 +28,7 @@ resource "aws_instance" "example" {
       "echo 'download MS package'",
       "wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb",
       "sudo dpkg -i packages-microsoft-prod.deb",
-
+      
       "echo 'remove dotnet'",
       "sudo apt remove dotnet*",
       "sudo apt remove aspnetcore*",
@@ -41,7 +41,7 @@ resource "aws_instance" "example" {
       
       "echo 'install niginx'",
       "sudo apt-get update",      
-      "apt-get install nginx",
+      "sudo apt-get install nginx",
 
       "echo 'install dotnet'",
       "sudo apt-get update",
